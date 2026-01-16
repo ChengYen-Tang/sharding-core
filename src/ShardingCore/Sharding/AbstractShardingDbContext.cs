@@ -50,6 +50,9 @@ namespace ShardingCore.Sharding
             return _shardingDbContextExecutor;
         }
 
+        /// <summary>
+        /// Clears cached sharding executors so pooled contexts can be reused safely.
+        /// </summary>
         internal void ResetShardingDbContextExecutor()
         {
             if (_shardingDbContextExecutor != null)
