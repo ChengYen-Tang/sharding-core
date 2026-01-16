@@ -24,6 +24,7 @@ namespace ShardingCore.EFCores
 
         public Task ResetStateAsync(CancellationToken cancellationToken = default)
         {
+            cancellationToken.ThrowIfCancellationRequested();
             ResetState();
             return Task.CompletedTask;
         }

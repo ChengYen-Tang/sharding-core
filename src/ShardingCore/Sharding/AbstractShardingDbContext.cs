@@ -63,6 +63,13 @@ namespace ShardingCore.Sharding
             _createExecutor = false;
         }
 
+        protected bool ExecutorCreated => _createExecutor;
+
+        protected void SetExecutorCreated(bool created)
+        {
+            _createExecutor = created;
+        }
+
         /// <summary>
         /// 当前dbcontext是否是执行的dbcontext
         /// </summary>
