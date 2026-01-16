@@ -50,6 +50,16 @@ namespace ShardingCore.Sharding
             return _shardingDbContextExecutor;
         }
 
+        internal void ResetShardingDbContextExecutor()
+        {
+            if (_shardingDbContextExecutor != null)
+            {
+                _shardingDbContextExecutor.Dispose();
+                _shardingDbContextExecutor = null;
+            }
+            _createExecutor = false;
+        }
+
         /// <summary>
         /// 当前dbcontext是否是执行的dbcontext
         /// </summary>
